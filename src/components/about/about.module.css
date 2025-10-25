@@ -1,0 +1,96 @@
+.aboutContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 6%;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 40%;
+}
+
+.headerText {
+    font-family: PoppinsSemiBold;
+    font-size: 20px;
+}
+
+.descriptionText {
+    font-family: MontserratRegular;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.imageStyle {
+    height: 390px;
+    width: 390px;
+}
+
+.skillsWrapper {
+    padding: 12px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.categoryWrapper {
+    max-width: 50%;
+    margin-bottom: 16px;
+}
+
+.categoryTitle {
+    font-family: PoppinsBold;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.skillChipWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skillChip {
+    padding: 4px 8px;
+    border: 1px solid #281b1b;
+    border-radius: 25px;
+    font-size: 14px;
+    font-family: MontserratLight;
+    &:hover {
+        font-family: MontserratBold;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .textWrapper {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .imageStyle {
+        height: 250px;
+        width: 250px;
+        margin-top: 20px;
+    }
+
+    .skillsWrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .categoryWrapper {
+        max-width: 100%;
+    }
+}

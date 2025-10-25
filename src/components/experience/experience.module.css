@@ -1,0 +1,72 @@
+.experienceContainer {
+    padding: 4% 6%;
+}
+
+.headerText {
+  background-image: linear-gradient(90deg,#3f5a43,#7f9966);
+  color: transparent;
+  background-clip: text;
+  font-family: PoppinsSemiBold;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.descriptionText {
+    font-family: MontserratRegular;
+    font-size: 16px;
+    color: #605b5b;
+    margin-bottom: 24px;
+}
+
+.experienceWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    cursor: pointer;
+    gap: 12px;
+}
+
+.orgWrapper {
+    min-width: 410px;
+    border: 1px solid gray;
+    padding: 12px;
+}
+
+.orgText {
+    font-family: PoppinsMedium;
+    font-size: 20px;
+}
+
+.orgDuration {
+    font-family: MontserratRegular;
+    font-size: 16px;
+    color: #605b5b;
+}
+
+.projectWrapper {
+    margin: 8px 0px;
+}
+
+.clientLabel {
+    font-family: PoppinsRegular;
+    font-size: 16px;
+    color: gray;
+}
+
+.clientDetail {
+    font-family: MontserratRegular;
+    font-size: 14px;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .experienceWrapper {
+        flex-direction: column;
+    }
+
+    .orgWrapper {
+        min-width: 100%;
+    }
+}

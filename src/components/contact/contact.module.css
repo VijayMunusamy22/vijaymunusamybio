@@ -1,0 +1,64 @@
+.contactContainer {
+    padding: 4% 6%;
+}
+
+.headerText {
+  background-image: linear-gradient(90deg,#3f5a43,#7f9966);
+  color: transparent;
+  background-clip: text;
+  font-family: PoppinsSemiBold;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.descriptionText {
+    font-family: MontserratRegular;
+    font-size: 16px;
+    color: #605b5b;
+    margin-bottom: 24px;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 50%;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formInput,
+.formTextarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.formTextarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #3f5a43;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #7f9966;
+}
+
+@media (max-width: 768px) {
+    .contactForm {
+        width: 100%;
+    }
+}

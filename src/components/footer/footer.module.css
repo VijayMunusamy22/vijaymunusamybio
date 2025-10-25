@@ -1,0 +1,33 @@
+.footerContainer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #e7e7e7;
+}
+
+.socialLinks {
+  margin-top: 10px;
+}
+
+.socialLinks a {
+  margin: 0 15px;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.socialLinks a:hover {
+  transform: scale(1.2);
+}
+
+.socialLinks svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 768px) {
+  .socialLinks a {
+    margin: 0 10px;
+  }
+}

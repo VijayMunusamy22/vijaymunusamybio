@@ -1,0 +1,8 @@
+.appContainer {
+    background-image: linear-gradient(90deg,#d7e2cc,#e1e2cc);
+}
+
+.appPlaceholder {
+    height: 150px;
+    background-image: linear-gradient(90deg,#d7e2cc,#e1e2cc);
+}

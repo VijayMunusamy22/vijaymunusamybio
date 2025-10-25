@@ -1,0 +1,33 @@
+.resumeContainer {
+    padding: 4% 6%;
+}
+
+.headerText {
+  background-image: linear-gradient(90deg,#3f5a43,#7f9966);
+  color: transparent;
+  background-clip: text;
+  font-family: PoppinsSemiBold;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.descriptionText {
+    font-family: MontserratRegular;
+    font-size: 16px;
+    color: #605b5b;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.resumeIcon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+.resumeIcon svg {
+        width: 80px;
+        height: 80px;
+    }
+}
