@@ -13,17 +13,21 @@
     align-items: flex-start;
     gap: 12px;
     max-width: 40%;
+    color: #F8FAFC;
 }
 
 .headerText {
     font-family: PoppinsSemiBold;
     font-size: 20px;
+    color: #F8FAFC;
 }
 
 .descriptionText {
     font-family: MontserratRegular;
     font-size: 16px;
     margin-bottom: 0px;
+    color: #F8FAFC;
+
 }
 
 .imageStyle {
@@ -48,6 +52,7 @@
     font-family: PoppinsBold;
     font-size: 18px;
     margin-bottom: 4px;
+    color: #F8FAFC;
 }
 
 .skillChipWrapper {
@@ -59,13 +64,12 @@
 
 .skillChip {
     padding: 4px 8px;
-    border: 1px solid #281b1b;
+    border: 1px solid #94A3B8;
     border-radius: 25px;
     font-size: 14px;
     font-family: MontserratLight;
-    &:hover {
-        font-family: MontserratBold;
-    }
+    color: #F8FAFC;
+    cursor: default;
 }
 
 @media (max-width: 768px) {

@@ -14,7 +14,7 @@
 .descriptionText {
     font-family: MontserratRegular;
     font-size: 16px;
-    color: #605b5b;
+    color: #F8FAFC;
     margin-bottom: 24px;
 }
 
@@ -37,12 +37,13 @@
 .orgText {
     font-family: PoppinsMedium;
     font-size: 20px;
+    color: #F8FAFC;
 }
 
 .orgDuration {
     font-family: MontserratRegular;
     font-size: 16px;
-    color: #605b5b;
+    color: #F8FAFC;
 }
 
 .projectWrapper {
@@ -52,13 +53,13 @@
 .clientLabel {
     font-family: PoppinsRegular;
     font-size: 16px;
-    color: gray;
+    color: #F8FAFC;
 }
 
 .clientDetail {
     font-family: MontserratRegular;
     font-size: 14px;
-    color: black;
+    color: #F8FAFC;
 }
 
 @media (max-width: 768px) {
