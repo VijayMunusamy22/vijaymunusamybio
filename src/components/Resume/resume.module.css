@@ -14,7 +14,7 @@
 .descriptionText {
     font-family: MontserratRegular;
     font-size: 16px;
-    color: #605b5b;
+    color: #F8FAFC;
     margin-bottom: 24px;
     text-align: left;
 }
@@ -23,6 +23,7 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
+    color: #F8FAFC;
 }
 
 @media (max-width: 768px) {

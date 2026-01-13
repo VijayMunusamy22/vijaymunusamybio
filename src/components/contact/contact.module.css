@@ -14,7 +14,7 @@
 .descriptionText {
     font-family: MontserratRegular;
     font-size: 16px;
-    color: #605b5b;
+    color: #F8FAFC;
     margin-bottom: 24px;
 }
 
@@ -28,6 +28,9 @@
 .formGroup {
     display: flex;
     flex-direction: column;
+    label {
+        color: #F8FAFC;
+    }
 }
 
 .formInput,
@@ -36,17 +39,19 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
+    color: #000000;
 }
 
 .formTextarea {
     resize: vertical;
     min-height: 100px;
+    color: #F8FAFC;
 }
 
 button[type="submit"] {
     padding: 12px 20px;
     background-color: #3f5a43;
-    color: white;
+    color: #F8FAFC;
     border: none;
     border-radius: 4px;
     cursor: pointer;

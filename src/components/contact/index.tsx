@@ -15,21 +15,20 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
     try {
-      const response = await fetch('http://localhost:3000/api/contact', { // Replace with your actual backend URL
-        method: 'POST',
+      await fetch("https://api.pushover.net/1/messages.json", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify(formData)
+        body: new URLSearchParams({
+          token: import.meta.env.VITE_PUSHOVER_APP_TOKEN,
+          user: import.meta.env.VITE_PUSHOVER_USER_KEY,
+          message: JSON.stringify(formData),
+        }),
       });
-
-      if (response.ok) {
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert('Failed to send message.');
-      }
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Error sending message:', error);
       alert('An error occurred while sending the message.');
@@ -51,7 +50,7 @@ const Contact: React.FC = () => {
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required className={styles.formTextarea}></textarea>
+          <textarea id="message" name="message" value={formData.message} onChange={handleChange} className={styles.formTextarea} />
         </div>
         <button type="submit">Send</button>
       </form>
