@@ -2,7 +2,7 @@ import resumeStyle from "./resume.module.css";
 
 const Resume = () => {
     const handleResumeDownload = () => {
-        window.open("https://www.dropbox.com/scl/fi/bbx3w5qszb75asye6y2ip/CMP_PDF.v01_Vijay_Munusamy_Resume.pdf?rlkey=smq40jrmlrgfhiyeyy81kz3yq&dl=0", "_blank");
+        window.open("https://www.dropbox.com/scl/fi/bbx3w5qszb75asye6y2ip/CMP_PDF.v01_Vijay_Munusamy_Resume.pdf?rlkey=smq40jrmlrgfhiyeyy81kz3yq&st=4a1wnt2a&dl=0", "_blank");
     }
     return(
         <section id="resume" className={resumeStyle.resumeContainer}>
