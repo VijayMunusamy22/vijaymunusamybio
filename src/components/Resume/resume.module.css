@@ -1,34 +1,212 @@
 .resumeContainer {
-    padding: 4% 6%;
+    padding: 5% 12%;
+    background: linear-gradient(135deg, rgba(37,99,235,0.03) 0%, rgba(124,58,237,0.03) 100%);
+    margin: 0 auto;
+}
+
+.resumeWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contentSection {
+    flex: 1;
+    min-width: 0;
 }
 
 .headerText {
-  background-image: linear-gradient(90deg,#3f5a43,#7f9966);
-  color: transparent;
-  background-clip: text;
-  font-family: PoppinsSemiBold;
-  font-size: 32px;
-  margin-bottom: 12px;
+    background-image: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: PoppinsSemiBold;
+    font-size: 32px;
+    margin-bottom: 12px;
 }
 
 .descriptionText {
     font-family: MontserratRegular;
     font-size: 16px;
-    color: #F8FAFC;
-    margin-bottom: 24px;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
     text-align: left;
+    line-height: 1.7;
 }
 
-.resumeIcon {
-    cursor: pointer;
+.highlightList {
     display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.highlightItem {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.highlightIcon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    color: #F8FAFC;
+    background-color: var(--accent-light);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.highlightTitle {
+    margin: 0;
+    font-family: PoppinsMedium;
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.highlightDesc {
+    margin: 4px 0 0 0;
+    font-family: MontserratRegular;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.downloadCard {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0;
+}
+
+.downloadButton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-family: PoppinsMedium;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.2);
+}
+
+.downloadButton:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 6px 20px rgba(37,99,235,0.3);
+    transform: translateY(-2px);
+}
+
+.downloadButton:active {
+    transform: translateY(0);
+}
+
+.downloadButton svg {
+    width: 20px;
+    height: 20px;
+}
+
+.illustrationSection {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustrationCard {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(37,99,235,0.08) 0%, rgba(124,58,237,0.08) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.illustrationCard:hover {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(37,99,235,0.12) 0%, rgba(124,58,237,0.12) 100%);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(37,99,235,0.1);
+}
+
+.documentIcon {
+    font-size: 64px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.illustrationText {
+    font-family: PoppinsMedium;
+    font-size: 16px;
+    color: var(--text);
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .resumeWrapper {
+        gap: 30px;
+    }
+
+    .illustrationCard {
+        max-width: 250px;
+    }
+
+    .documentIcon {
+        font-size: 48px;
+    }
 }
 
 @media (max-width: 768px) {
-.resumeIcon svg {
-        width: 80px;
-        height: 80px;
+    .resumeContainer {
+        padding: 4% 6%;
+    }
+
+    .resumeWrapper {
+        flex-direction: column;
+        gap: 20px;
+        padding: 5% 12%;
+    }
+
+    .contentSection {
+        width: 100%;
+    }
+
+    .illustrationSection {
+        display: none;
+    }
+
+    .downloadButton {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .downloadButton svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .headerText {
+        font-size: 28px;
     }
 }

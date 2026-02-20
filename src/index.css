@@ -4,62 +4,69 @@
   box-sizing: border-box;
 }
 
-/* Poppins Font Family */
-@font-face {
-  font-family: "PoppinsLight";
-  src: url("/src/assets/fonts/Poppins/Poppins-Light.ttf");
-}
-@font-face {
-  font-family: "PoppinsThin";
-  src: url("/src/assets/fonts/Poppins/Poppins-Thin.ttf");
-}
-@font-face {
-  font-family: "PoppinsRegular";
-  src: url("/src/assets/fonts/Poppins/Poppins-Regular.ttf");
-}
-@font-face {
-  font-family: "PoppinsMedium";
-  src: url("/src/assets/fonts/Poppins/Poppins-Medium.ttf");
-}
-@font-face {
-  font-family: "PoppinsBold";
-  src: url("/src/assets/fonts/Poppins/Poppins-Bold.ttf");
-}
-@font-face {
-  font-family: "PoppinsSemiBold";
-  src: url("/src/assets/fonts/Poppins/Poppins-SemiBold.ttf");
-}
-@font-face {
-  font-family: "PoppinsExtraBold";
-  src: url("/src/assets/fonts/Poppins/Poppins-ExtraBold.ttf");
+/* Poppins (weight-aware) */
+@font-face { font-family: 'Poppins'; src: url('/src/assets/fonts/Poppins/Poppins-Thin.ttf'); font-weight: 100; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/src/assets/fonts/Poppins/Poppins-Light.ttf'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/src/assets/fonts/Poppins/Poppins-Regular.ttf'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/src/assets/fonts/Poppins/Poppins-Medium.ttf'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/src/assets/fonts/Poppins/Poppins-SemiBold.ttf'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/src/assets/fonts/Poppins/Poppins-Bold.ttf'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/src/assets/fonts/Poppins/Poppins-ExtraBold.ttf'); font-weight: 800; font-display: swap; }
+
+/* Montserrat (weight-aware) */
+@font-face { font-family: 'Montserrat'; src: url('/src/assets/fonts/Montserrat/Montserrat-Thin.ttf'); font-weight: 100; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('/src/assets/fonts/Montserrat/Montserrat-Light.ttf'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('/src/assets/fonts/Montserrat/Montserrat-Regular.ttf'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('/src/assets/fonts/Montserrat/Montserrat-Medium.ttf'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('/src/assets/fonts/Montserrat/Montserrat-SemiBold.ttf'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('/src/assets/fonts/Montserrat/Montserrat-Bold.ttf'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('/src/assets/fonts/Montserrat/Montserrat-ExtraBold.ttf'); font-weight: 800; font-display: swap; }
+
+/* Design tokens & global overrides */
+:root{
+  /* Modern light theme - refined & polished */
+  --bg: #fafbfc; /* soft off-white */
+  --surface: #ffffff;
+  --surface-hover: #f9fafb;
+  --muted: #64748b; /* soft slate for secondary text */
+  --text: #1e293b; /* dark slate for primary text */
+  --text-secondary: #475569; /* lighter slate for descriptions */
+  --accent: #2563eb; /* refined blue for headers */
+  --accent-light: #dbeafe; /* light blue for backgrounds */
+  --accent-2: #7c3aed; /* purple secondary */
+  --border: #e2e8f0;
+  --radius: 10px;
+  --container-max: 1100px;
+  --font-sans: 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
-/* Montserrat Font Family */
-@font-face {
-  font-family: "MontserratLight";
-  src: url("/src/assets/fonts/Montserrat/Montserrat-Light.ttf");
+body{
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-@font-face {
-  font-family: "MontserratThin";
-  src: url("/src/assets/fonts/Montserrat/Montserrat-Thin.ttf");
+
+/* Provide subtle page background texture similar to before but light */
+.appContainer {
+  background-color: transparent; /* components control surface */
 }
-@font-face {
-  font-family: "MontserratRegular";
-  src: url("/src/assets/fonts/Montserrat/Montserrat-Regular.ttf");
+
+/* Make the main app container responsive and centered */
+.appContainer{
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 24px;
 }
-@font-face {
-  font-family: "MontserratMedium";
-  src: url("/src/assets/fonts/Montserrat/Montserrat-Medium.ttf");
+
+/* Small utility tweaks to play nicely with Oat's semantics */
+input[type="text"], button {
+  font-family: inherit;
 }
-@font-face {
-  font-family: "MontserratBold";
-  src: url("/src/assets/fonts/Montserrat/Montserrat-Bold.ttf");
-}
-@font-face {
-  font-family: "MontserratSemiBold";
-  src: url("/src/assets/fonts/Montserrat/Montserrat-SemiBold.ttf");
-}
-@font-face {
-  font-family: "MontserratExtraBold";
-  src: url("/src/assets/fonts/Montserrat/Montserrat-ExtraBold.ttf");
+
+@media (max-width: 768px){
+  .appContainer{padding:16px}
+  .chatbot{right:12px;bottom:80px;width:95%;height:70%}
+  .chatbotContainer input[type="text"]{width:100%}
 }
