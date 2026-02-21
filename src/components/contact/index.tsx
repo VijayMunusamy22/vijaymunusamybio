@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactGA from 'react-ga4';
 import styles from './contact.module.css';
 
 
@@ -66,6 +67,12 @@ const Contact: React.FC = () => {
       });
       
       setSubmitStatus('success');
+      // Track form submission
+      ReactGA.event({
+        category: 'engagement',
+        action: 'contact_form_submit',
+        label: 'contact_form'
+      });
       setFormData({ name: '', email: '', message: '' });
       
       // Reset success message after 3 seconds

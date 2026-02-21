@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import appLogo from "/vm_logo_gradient.svg";
+import ReactGA from "react-ga4";
 
 import style from "./header.module.css";
 
@@ -8,6 +9,12 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigateToSection = (idTag: string) => {
+    // Track nav button click
+    ReactGA.event({
+      category: 'engagement',
+      action: 'nav_click',
+      label: idTag
+    });
     window.location.href = `#${idTag}`;
     setIsMobileMenuOpen(false);
   }

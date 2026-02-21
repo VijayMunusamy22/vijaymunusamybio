@@ -1,7 +1,14 @@
 import resumeStyle from "./resume.module.css";
+import ReactGA from "react-ga4";
 
 const Resume = () => {
     const handleResumeDownload = () => {
+        // Track resume download
+        ReactGA.event({
+            category: 'engagement',
+            action: 'resume_download',
+            label: 'resume_pdf'
+        });
         window.open("https://www.dropbox.com/scl/fi/bbx3w5qszb75asye6y2ip/CMP_PDF.v01_Vijay_Munusamy_Resume.pdf?rlkey=smq40jrmlrgfhiyeyy81kz3yq&st=4a1wnt2a&dl=0", "_blank");
     }
     return(

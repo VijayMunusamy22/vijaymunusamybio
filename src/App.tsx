@@ -6,11 +6,18 @@ import Contact from "./components/contact";
 import Footer from "./components/footer";
 
 import appStyles from "./app.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ReactGA from 'react-ga4';
 
 
 function App() {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+
+  // Track page view on component mount
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname })
+  }, [])
+
   return (
     <>
       <main className={appStyles.appContainer}>
