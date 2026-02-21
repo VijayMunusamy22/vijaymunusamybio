@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import appLogo from "/vm_logo_gradient.svg";
+import ReactGA from "react-ga4";
 
 import style from "./header.module.css";
 
@@ -8,6 +9,12 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigateToSection = (idTag: string) => {
+    // Track nav button click
+    ReactGA.event({
+      category: 'engagement',
+      action: 'nav_click',
+      label: idTag
+    });
     window.location.href = `#${idTag}`;
     setIsMobileMenuOpen(false);
   }
@@ -34,20 +41,20 @@ const Header = () => {
         <img src={appLogo} alt="app Logo" className={style.appLogo} />
       </div>
       <div className={style.navLinksWrapper}>
-        <span className={style.navLinkItem} onClick={() => navigateToSection("about")}>About</span>
-        <span className={style.navLinkItem} onClick={() => navigateToSection("experience")}>Experience</span>
-        <span className={style.navLinkItem} onClick={() => navigateToSection("resume")}>Resume</span>
-        <span className={style.navLinkItem} onClick={() => navigateToSection("contact")}>Contact</span>
+        <button type="button" className={style.navLinkItem} onClick={() => navigateToSection("about")} aria-label="Go to About">About</button>
+        <button type="button" className={style.navLinkItem} onClick={() => navigateToSection("experience")} aria-label="Go to Experience">Experience</button>
+        <button type="button" className={style.navLinkItem} onClick={() => navigateToSection("resume")} aria-label="Go to Resume">Resume</button>
+        <button type="button" className={style.navLinkItem} onClick={() => navigateToSection("contact")} aria-label="Go to Contact">Contact</button>
       </div>
-      <div className={style.hamburgerMenu} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+      <button aria-label="Toggle navigation" aria-expanded={isMobileMenuOpen} className={style.hamburgerMenu} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </div>
+      </button>
       {isMobileMenuOpen && (
         <div className={style.mobileNavLinksWrapper}>
-          <span className={style.navLinkItem} onClick={() => navigateToSection("about")}>About</span>
-          <span className={style.navLinkItem} onClick={() => navigateToSection("experience")}>Experience</span>
-          <span className={style.navLinkItem} onClick={() => navigateToSection("resume")}>Resume</span>
-          <span className={style.navLinkItem} onClick={() => navigateToSection("contact")}>Contact</span>
+          <button type="button" className={style.navLinkItem} onClick={() => navigateToSection("about")} aria-label="Go to About">About</button>
+          <button type="button" className={style.navLinkItem} onClick={() => navigateToSection("experience")} aria-label="Go to Experience">Experience</button>
+          <button type="button" className={style.navLinkItem} onClick={() => navigateToSection("resume")} aria-label="Go to Resume">Resume</button>
+          <button type="button" className={style.navLinkItem} onClick={() => navigateToSection("contact")} aria-label="Go to Contact">Contact</button>
         </div>
       )}
     </header>

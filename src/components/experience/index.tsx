@@ -28,20 +28,35 @@ const Experience = () => {
     return(
         <section id="experience" className={experienceStyle.experienceContainer}>
             <h3 className={experienceStyle.headerText}>Experience</h3>
-            <p className={experienceStyle.descriptionText}>I have worked with a variety of companies, from startups to large corporations. Here is a summary of my experience.</p>
+            <p className={experienceStyle.descriptionText}>I have worked with a variety of companies, from startups to large corporations. Here is a summary of my professional journey.</p>
             <div className={experienceStyle.experienceWrapper}>
             {
                 Object.keys(ExperienceDetails).map(eachOrg => (
                     <div className={experienceStyle.orgWrapper} key={eachOrg}>
-                        <h4 className={experienceStyle.orgText}>{eachOrg}</h4>
-                        <span className={experienceStyle.orgDuration}>{ExperienceDetails[eachOrg].duration}</span>
-                        <div className={experienceStyle.projectWrapper}>
-                            <h6 className={experienceStyle.clientLabel}>Client/Project:</h6>
-                            <span className={experienceStyle.clientDetail}>{ExperienceDetails[eachOrg].project}</span>
+                        <div className={experienceStyle.accentLine}></div>
+                        <div className={experienceStyle.cardHeader}>
+                            <div>
+                                <h4 className={experienceStyle.orgText}>{eachOrg}</h4>
+                                <span className={experienceStyle.badgeSubtext}>Company</span>
+                            </div>
+                            <span className={experienceStyle.badge}>{ExperienceDetails[eachOrg].duration}</span>
                         </div>
-                        <div>
-                        <h6 className={experienceStyle.clientLabel}>Role:</h6>
-                        <span className={experienceStyle.clientDetail}>{ExperienceDetails[eachOrg].role}</span>
+                        <div className={experienceStyle.cardDivider}></div>
+                        <div className={experienceStyle.cardContent}>
+                            <div className={experienceStyle.detailRow}>
+                                <span className={experienceStyle.iconWrapper}>💼</span>
+                                <div className={experienceStyle.detailInfo}>
+                                    <p className={experienceStyle.detailLabel}>Role</p>
+                                    <p className={experienceStyle.detailValue}>{ExperienceDetails[eachOrg].role}</p>
+                                </div>
+                            </div>
+                            <div className={experienceStyle.detailRow}>
+                                <span className={experienceStyle.iconWrapper}>🎯</span>
+                                <div className={experienceStyle.detailInfo}>
+                                    <p className={experienceStyle.detailLabel}>Project</p>
+                                    <p className={experienceStyle.detailValue}>{ExperienceDetails[eachOrg].project}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 ))

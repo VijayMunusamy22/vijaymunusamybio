@@ -42,12 +42,22 @@ const Skills: any = {
   ],
 };
 
+const skillIcons: any = {
+  "Frontend": "💻",
+  "Backend": "⚙️",
+  "Integrations": "🔗",
+  "Cloud exposure": "☁️",
+};
+
 const About = () => {
   return (
     <Fragment>
       <section id="about" className={aboutStyle.aboutContainer}>
         <div className={aboutStyle.textWrapper}>
-          <h1 className={aboutStyle.headerText}>Hi, I'm Vijay Munusamy</h1>
+          <div className={aboutStyle.titleSection}>
+            <h1 className={aboutStyle.headerText}>Hi, I'm Vijay Munusamy</h1>
+            <span className={aboutStyle.titleSubtext}>Full Stack Engineer</span>
+          </div>
           <p className={aboutStyle.descriptionText}>
             A passionate Full Stack Engineer with nearly 7 years of experience
             building scalable, high-performance web applications. I specialize
@@ -65,16 +75,20 @@ const About = () => {
       </section>
       <div className={aboutStyle.skillsWrapper}>
         {Object.keys(Skills).map((eachCategory: string) => (
-          <div className={aboutStyle.categoryWrapper} key={eachCategory}>
-            <h5 className={aboutStyle.categoryTitle}>{eachCategory}</h5>
-            <div className={aboutStyle.skillChipWrapper}>
-            {Skills[eachCategory].map((eachSkills: string) => (
-              <span key={eachSkills} className={aboutStyle.skillChip}>
-                {eachSkills}
-              </span>
-            ))}
+            <div className={aboutStyle.categoryWrapper} key={eachCategory}>
+              <div className={aboutStyle.categoryHeader}>
+                <span className={aboutStyle.categoryIcon}>{skillIcons[eachCategory]}</span>
+                <h5 className={aboutStyle.categoryTitle}>{eachCategory}</h5>
+              </div>
+              <div className={aboutStyle.categoryDivider}></div>
+              <div className={aboutStyle.skillChipWrapper}>
+                {Skills[eachCategory].map((eachSkills: string) => (
+                  <span key={eachSkills} className={aboutStyle.skillChip}>
+                    {eachSkills}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
         ))}
       </div>
     </Fragment>

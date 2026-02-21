@@ -1,21 +1,25 @@
 .experienceContainer {
-    padding: 4% 6%;
+    padding: 5% 12%;
+    background: linear-gradient(135deg, rgba(37,99,235,0.03) 0%, rgba(124,58,237,0.03) 100%);
+    margin: 0 auto;
 }
 
 .headerText {
-  background-image: linear-gradient(90deg,#3f5a43,#7f9966);
-  color: transparent;
-  background-clip: text;
-  font-family: PoppinsSemiBold;
-  font-size: 32px;
-  margin-bottom: 12px;
+    background-image: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: PoppinsSemiBold;
+    font-size: 32px;
+    margin-bottom: 12px;
 }
 
 .descriptionText {
     font-family: MontserratRegular;
     font-size: 16px;
-    color: #F8FAFC;
-    margin-bottom: 24px;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    line-height: 1.7;
 }
 
 .experienceWrapper {
@@ -29,37 +33,124 @@
 }
 
 .orgWrapper {
-    min-width: 410px;
-    border: 1px solid gray;
-    padding: 12px;
+    /* responsive organization card */
+    flex: 1 1 48%;
+    max-width: 48%;
+    min-width: 0;
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: var(--radius);
+    background-color: var(--surface);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.orgWrapper:hover {
+    box-shadow: 0 8px 24px rgba(37,99,235,0.12);
+    background-color: var(--surface-hover);
+    transform: translateY(-4px);
+    border-color: var(--accent-light);
+}
+
+.accentLine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
 }
 
 .orgText {
-    font-family: PoppinsMedium;
+    font-family: PoppinsSemiBold;
+    font-size: 18px;
+    color: var(--text);
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+}
+
+.badgeSubtext {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge {
+    background: linear-gradient(135deg, var(--accent-light), rgba(37, 99, 235, 0.08));
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.cardDivider {
+    height: 1px;
+    background-color: var(--border);
+    margin: 12px 0;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.detailRow {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+}
+
+.detailRow:hover .iconWrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.iconWrapper {
     font-size: 20px;
-    color: #F8FAFC;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-.orgDuration {
-    font-family: MontserratRegular;
-    font-size: 16px;
-    color: #F8FAFC;
+.detailInfo {
+    flex: 1;
 }
 
-.projectWrapper {
-    margin: 8px 0px;
+.detailLabel {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
 }
 
-.clientLabel {
-    font-family: PoppinsRegular;
-    font-size: 16px;
-    color: #F8FAFC;
-}
-
-.clientDetail {
+.detailValue {
+    color: var(--text);
+    margin: 6px 0 0 0;
+    line-height: 1.6;
     font-family: MontserratRegular;
     font-size: 14px;
-    color: #F8FAFC;
 }
 
 @media (max-width: 768px) {
@@ -68,6 +159,7 @@
     }
 
     .orgWrapper {
-        min-width: 100%;
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
